@@ -1,6 +1,6 @@
-from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
-from .models import Post
+from .models import Post, Group
+
 
 def index(request):
     text = 'Это главная страница проекта Yatube'
@@ -22,4 +22,4 @@ def group_posts(request, slug):
         'group': group,
         'posts': posts,
     }
-    return render(request, template, context) 
+    return render(request, template, context)
